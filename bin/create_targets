@@ -1,0 +1,10 @@
+#!/bin/bash
+
+##La primera funcion del bin targets, es encontrar en data/ todos los archivos de un mismo tipo y/o extension
+##La segunda funcion, es manipular el NOMBRE de los archivos de entrada, para generar los targets que se le van a pedir a mk
+find -L data/ \
+	-type f \
+	-name "*.tsv" \
+| sed \
+	-e "s#data/#results/#" \
+	-e "s#.tsv#.coverage.pdf#"

@@ -1,4 +1,4 @@
-Chromosome Start End	Locus_name position_in_locus Depth_by_base
+Chromosome	Start	End	Locus_name	position_in_locus	Depth_by_base
 22	147620	147719	GOLDEN_GENE1	1	5
 22	147620	147719	GOLDEN_GENE1	2	5
 22	147620	147719	GOLDEN_GENE1	3	4

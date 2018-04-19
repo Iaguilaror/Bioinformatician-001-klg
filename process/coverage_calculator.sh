@@ -3,18 +3,18 @@
 #Calculate breadth  of coverage (bcov) for every requested locus
 
 	#Calculate covb for each genomic region
-	covbGG1=$(grep GOLDEN_GENE1 ~/Bioinformatician-001-klg-master/test-materials/test-data/raw_coverages_by_base.tsv | awk '$6 > 1 {print ;}' | wc -l)
-	covbUR1=$(grep UNWANTED_REGION1 ~/Bioinformatician-001-klg-master/test-materials/test-data/raw_coverages_by_base.tsv | awk '$6 > 1 {print ;}' | wc -l)
-	covbGG2=$(grep GOLDEN_GENE2 ~/Bioinformatician-001-klg-master/test-materials/test-data/raw_coverages_by_base.tsv | awk '$6 > 1 {print ;}' | wc -l)
-	covbUR2=$(grep UNWANTED_REGION2 ~/Bioinformatician-001-klg-master/test-materials/test-data/raw_coverages_by_base.tsv | awk '$6 > 1 {print ;}' | wc -l)
-	covbGG3=$(grep GOLDEN_GENE3 ~/Bioinformatician-001-klg-master/test-materials/test-data/raw_coverages_by_base.tsv | awk '$6 > 1 {print ;}' | wc -l)
+	covbGG1=$(grep GOLDEN_GENE1 /test-materials/test-data/raw_coverages_by_base.tsv | awk '$6 > 1 {print ;}' | wc -l)
+	covbUR1=$(grep UNWANTED_REGION1 /test-materials/test-data/raw_coverages_by_base.tsv | awk '$6 > 1 {print ;}' | wc -l)
+	covbGG2=$(grep GOLDEN_GENE2 /test-materials/test-data/raw_coverages_by_base.tsv | awk '$6 > 1 {print ;}' | wc -l)
+	covbUR2=$(grep UNWANTED_REGION2 /test-materials/test-data/raw_coverages_by_base.tsv | awk '$6 > 1 {print ;}' | wc -l)
+	covbGG3=$(grep GOLDEN_GENE3 /test-materials/test-data/raw_coverages_by_base.tsv | awk '$6 > 1 {print ;}' | wc -l)
 
 	#Calculate regl for each genomic region
-	reglGG1=$(grep GOLDEN_GENE1 ~/Bioinformatician-001-klg-master/test-materials/test-data/raw_coverages_by_base.tsv | wc -l)
-	reglUR1=$(grep UNWANTED_REGION1 ~/Bioinformatician-001-klg-master/test-materials/test-data/raw_coverages_by_base.tsv | wc -l)
-	reglGG2=$(grep GOLDEN_GENE2 ~/Bioinformatician-001-klg-master/test-materials/test-data/raw_coverages_by_base.tsv | wc -l)
-	reglUR2=$(grep UNWANTED_REGION2 ~/Bioinformatician-001-klg-master/test-materials/test-data/raw_coverages_by_base.tsv | wc -l)
-	reglGG3=$(grep GOLDEN_GENE3 ~/Bioinformatician-001-klg-master/test-materials/test-data/raw_coverages_by_base.tsv | wc -l)
+	reglGG1=$(grep GOLDEN_GENE1 /test-materials/test-data/raw_coverages_by_base.tsv | wc -l)
+	reglUR1=$(grep UNWANTED_REGION1 /test-materials/test-data/raw_coverages_by_base.tsv | wc -l)
+	reglGG2=$(grep GOLDEN_GENE2 /test-materials/test-data/raw_coverages_by_base.tsv | wc -l)
+	reglUR2=$(grep UNWANTED_REGION2 /test-materials/test-data/raw_coverages_by_base.tsv | wc -l)
+	reglGG3=$(grep GOLDEN_GENE3 /test-materials/test-data/raw_coverages_by_base.tsv | wc -l)
 
 	#Calculate bcov for each genomic region
 	bcovGG1=$(echo "scale=3;$covbGG1/$reglGG1*100" | bc)
@@ -32,11 +32,11 @@
 #Calculate mean depth of coverage (mdcov) for every requested locus
 
         #Calculate seqb for each genomic region
-	seqbGG1=$(grep GOLDEN_GENE1 ~/Bioinformatician-001-klg-master/test-materials/test-data/raw_coverages_by_base.tsv | awk '$6 > 1 {sum += $6} END {print sum}')
-        seqbUR1=$(grep UNWANTED_REGION1 ~/Bioinformatician-001-klg-master/test-materials/test-data/raw_coverages_by_base.tsv | awk '$6 > 1 {sum += $6} END {print sum}')
-        seqbGG2=$(grep GOLDEN_GENE2 ~/Bioinformatician-001-klg-master/test-materials/test-data/raw_coverages_by_base.tsv | awk '$6 > 1 {sum += $6} END {print sum}')
-        seqbUR2=$(grep UNWANTED_REGION2 ~/Bioinformatician-001-klg-master/test-materials/test-data/raw_coverages_by_base.tsv | awk '$6 > 1 {sum += $6} END {print sum}')
-        seqbGG3=$(grep GOLDEN_GENE3 ~/Bioinformatician-001-klg-master/test-materials/test-data/raw_coverages_by_base.tsv | awk '$6 > 1 {sum += $6} END {print sum}')
+	seqbGG1=$(grep GOLDEN_GENE1 /test-materials/test-data/raw_coverages_by_base.tsv | awk '$6 > 1 {sum += $6} END {print sum}')
+        seqbUR1=$(grep UNWANTED_REGION1 /test-materials/test-data/raw_coverages_by_base.tsv | awk '$6 > 1 {sum += $6} END {print sum}')
+        seqbGG2=$(grep GOLDEN_GENE2 /test-materials/test-data/raw_coverages_by_base.tsv | awk '$6 > 1 {sum += $6} END {print sum}')
+        seqbUR2=$(grep UNWANTED_REGION2 /test-materials/test-data/raw_coverages_by_base.tsv | awk '$6 > 1 {sum += $6} END {print sum}')
+        seqbGG3=$(grep GOLDEN_GENE3 /test-materials/test-data/raw_coverages_by_base.tsv | awk '$6 > 1 {sum += $6} END {print sum}')
 
 	#Calculate mdcov for each genomic region
 	mdcovGG1=$(echo "scale=3;$seqbGG1/$covbGG1" | bc)
