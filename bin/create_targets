@@ -7,4 +7,4 @@ find -L data/ \
 	-name "*.tsv" \
 | sed \
 	-e "s#data/#results/#" \
-	-e "s#.tsv#.tsv.coverage#"
+	-e "s#.tsv#.coverage.pdf#"
